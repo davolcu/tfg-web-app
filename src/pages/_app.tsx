@@ -21,8 +21,8 @@ function MyApp({
       <Layout
         meta={pageProps.meta}
         isErrorPage={pathname === Constants.ERROR_PAGE_PATHNAME}
-        navItems={pageProps.navItems.Items}
-        legalBlocks={pageProps.legalBlocks.Items}
+        navItems={pageProps.navItems?.Items ?? []}
+        legalBlocks={pageProps.legalBlocks?.Items ?? []}
       >
         <Component {...pageProps} />
       </Layout>

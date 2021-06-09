@@ -1,8 +1,6 @@
 import Head from 'next/head';
 /** Types */
 import { GetStaticProps } from 'next';
-/** Services */
-import { getErrorData } from '@services/error';
 
 const ErrorPage = (): JSX.Element => (
   <>
@@ -82,12 +80,13 @@ const ErrorPage = (): JSX.Element => (
   </>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await getErrorData();
-
-  return {
-    props: { ...data },
-  };
-};
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    meta: {
+      title: 'Page not found | David Olmos',
+      description: 'This is not the page you are looking for.',
+    },
+  },
+});
 
 export default ErrorPage;

@@ -1,8 +1,6 @@
 import Head from 'next/head';
 /** Types */
 import { GetStaticProps } from 'next';
-/** Services */
-import { getInternalErrorData } from '@services/error';
 
 const ErrorPage = (): JSX.Element => (
   <>
@@ -85,12 +83,13 @@ const ErrorPage = (): JSX.Element => (
   </>
 );
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = await getInternalErrorData();
-
-  return {
-    props: { ...data },
-  };
-};
+export const getStaticProps: GetStaticProps = async () => ({
+  props: {
+    data: {
+      title: 'Internal Server Error | David Olmos',
+      description: `Woops, it seems like we're having issues here. But don't worry, we will fix them`,
+    },
+  },
+});
 
 export default ErrorPage;

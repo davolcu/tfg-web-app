@@ -32,10 +32,10 @@ const Layout = ({
   return (
     <>
       <Meta {...meta} />
-      <Header navItems={navItems} />
+      <Header isErrorPage={isErrorPage} navItems={navItems} />
       {!isErrorPage && <SubHeader />}
       <div className={classNames}>{children}</div>
-      <Footer legalBlocks={legalBlocks} />
+      {!isErrorPage && <Footer legalBlocks={legalBlocks} />}
     </>
   );
 };
