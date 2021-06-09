@@ -1,6 +1,6 @@
 import Head from 'next/head';
 /** Types */
-import { MetaProps } from '@customTypes/post';
+import { MetaProps } from '@customTypes/metadata';
 
 const Meta = ({
   title,
