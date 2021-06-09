@@ -20,7 +20,9 @@ function MyApp({
     <Providers>
       <Layout
         meta={pageProps.meta}
-        isErrorPage={pathname === Constants.ERROR_PAGE_PATHNAME}
+        isErrorPage={
+          pageProps.error || pathname === Constants.ERROR_PAGE_PATHNAME
+        }
         navItems={pageProps.navItems?.Items ?? []}
         legalBlocks={pageProps.legalBlocks?.Items ?? []}
       >

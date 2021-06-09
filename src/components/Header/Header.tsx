@@ -8,11 +8,10 @@ import { getStyleObjectFromString } from '@utils/utils';
 import styles from './Header.module.scss';
 
 type HeaderProps = {
-  isErrorPage: boolean;
   navItems: IEntity[];
 };
 
-const Header = ({ isErrorPage, navItems }: HeaderProps): JSX.Element => (
+const Header = ({ navItems }: HeaderProps): JSX.Element => (
   <div className={styles.header}>
     <div className={styles.headerMenu}>
       <div className={styles.headerMenuItem}>
@@ -21,7 +20,7 @@ const Header = ({ isErrorPage, navItems }: HeaderProps): JSX.Element => (
           className={styles.headerMenuItemLink}
           activeClassName={styles.headerMenuItemLinkActive}
         >
-          {isErrorPage ? 'Go back Home' : 'Home'}
+          Home
         </ActiveLink>
       </div>
 
