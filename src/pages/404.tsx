@@ -1,8 +1,7 @@
 import Head from 'next/head';
 /** Types */
 import { GetStaticProps } from 'next';
-/** Images */
-import ErrorImage from '@public/404.webp';
+/** Services */
 import { getErrorData } from '@services/error';
 
 const ErrorPage = (): JSX.Element => (
@@ -12,7 +11,7 @@ const ErrorPage = (): JSX.Element => (
     </Head>
 
     <main className="error">
-      <div className="error__background" />
+      <img src="/404.webp" alt="Error background" className="error__image" />
       <div className="error__wrapper">
         <span className="error__status">404</span>
         <p className="error__text">This is not the page you are looking for.</p>
@@ -27,11 +26,11 @@ const ErrorPage = (): JSX.Element => (
         background-color: #101827;
       }
 
-      .error__background {
+      .error__image {
+        position: absolute;
         width: 100%;
         height: 100%;
-        background: url(${ErrorImage}) 50% no-repeat;
-        background-size: cover;
+        object-fit: cover;
         opacity: 0.6;
       }
 
