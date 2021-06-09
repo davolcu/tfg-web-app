@@ -3,19 +3,22 @@ import Head from 'next/head';
 import { GetStaticProps } from 'next';
 /** Images */
 import ErrorImage from '@public/404.webp';
-import { getErrorData } from '@services/error';
+import { getInternalErrorData } from '@services/error';
 
 const ErrorPage = (): JSX.Element => (
   <>
     <Head>
-      <title>404 | Page not found</title>
+      <title>500 | Internal Server Error</title>
     </Head>
 
     <main className="error">
       <div className="error__background" />
       <div className="error__wrapper">
-        <span className="error__status">404</span>
-        <p className="error__text">This is not the page you are looking for.</p>
+        <span className="error__status">500</span>
+        <p className="error__text">
+          Woops, it seems like we&apos;re having issues here. But don&apos;t
+          worry, we will fix them
+        </p>
       </div>
     </main>
 
@@ -84,7 +87,7 @@ const ErrorPage = (): JSX.Element => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data = await getErrorData();
+  const data = await getInternalErrorData();
 
   return {
     props: { ...data },

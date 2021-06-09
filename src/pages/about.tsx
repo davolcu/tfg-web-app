@@ -99,9 +99,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const data = await getAboutData();
     return { props: { ...data } };
   } catch {
-    return {
-      statusCode: 404,
-    };
+    return { notFound: true };
   }
 };
 
