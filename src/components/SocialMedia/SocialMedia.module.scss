@@ -1,0 +1,24 @@
+.socialMedia {
+  display: flex;
+  align-items: center;
+}
+
+.socialMediaLink {
+  color: var(--text-primary);
+  width: 20px;
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  &:hover {
+    .socialMediaIcon {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.socialMediaIcon {
+  font-size: 18px;
+  transition: all 0.2s ease;
+}

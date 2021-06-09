@@ -1,0 +1,56 @@
+@import './fonts';
+@import './markdown';
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: iA Quattro, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    Liberation Mono, Courier New, monospace;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  transition: all 0.2s linear;
+}
+
+a {
+  color: var(--text-link);
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s linear;
+
+  &:focus,
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+p {
+  color: var(--text-primary);
+  font-size: 16px;
+  line-height: 1.4;
+  margin-block-end: 20px;
+  margin-bottom: 0;
+  margin-top: 20px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  -webkit-font-smoothing: antialiased;
+  text-size-adjust: 100%;
+  transition: all 0.2s linear;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}

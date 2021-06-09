@@ -1,0 +1,178 @@
+/*********************************************************
+* General
+**********************************************************/
+
+pre[class*='language-'],
+code[class*='language-'] {
+  text-shadow: none;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  line-height: 24px;
+  tab-size: 4;
+  hyphens: none;
+  transition: all 0.2s linear;
+
+  & * {
+    color: var(--code-color);
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s linear;
+  }
+}
+
+@media print {
+  pre[class*='language-'],
+  code[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+pre[class*='language-'] {
+  padding: 1.7em;
+  margin-top: 20px;
+  overflow: auto;
+  background: var(--code-bgColor);
+  border: 1px solid var(--code-border);
+  border-radius: 6px;
+  transition: all 0.2s linear;
+}
+
+:not(pre) > code {
+  padding: 0.1em 0.3em;
+  border-radius: 0.3em;
+  color: var(--code-inline-color);
+  background: var(--code-inline-bgColor);
+  font-size: 14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+    'Liberation Mono', 'Courier New', monospace;
+  transition: all 0.2s linear;
+}
+
+/*********************************************************
+* Tokens
+**********************************************************/
+
+.namespace {
+  opacity: 0.7;
+}
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: var(--token-comment);
+}
+.token.punctuation {
+  color: var(--token-punctuation);
+}
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: var(--token-property);
+}
+.token.tag .token.tag {
+  color: var(--token-tag);
+}
+.token.selector,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: var(--token-string);
+}
+.token.attr-name {
+  color: var(--token-attr-name);
+  transition: all 0.2 linear;
+}
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: var(--token-operator);
+  background: var(--token-operator-bgColor);
+}
+.token.atrule,
+.token.attr-value {
+  color: var(--token-keyword);
+}
+.token.keyword {
+  color: var(--token-keyword-const);
+}
+.token.keyword.module,
+.token.keyword.control-flow {
+  color: var(--token-keyword);
+}
+.token.keyword.null {
+  color: var(--token-variable);
+}
+.token.attr-value {
+  color: var(--token-attr-value);
+}
+.token.function {
+  color: var(--token-function);
+}
+.token.maybe-class-name {
+  color: var(--token-class);
+}
+.token.imports,
+.token.imports .token.maybe-class-name {
+  color: var(--token-import-name);
+}
+.token.property-access .token.maybe-class-name,
+.token.parameter .token.maybe-class-name {
+  color: var(--token-property);
+}
+.token.script {
+  color: var(--code-color);
+  transition: all 0.2 linear;
+}
+.token.regex,
+.token.important,
+.token.variable {
+  color: var(--token-regex);
+}
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+.token.entity {
+  cursor: help;
+}
+
+/*********************************************************
+* Line highlighting
+**********************************************************/
+
+pre[data-line] {
+  position: relative;
+}
+pre[class*='language-'] > code[class*='language-'] {
+  position: relative;
+  z-index: 1;
+}
+.line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: var(--line-highlight-bgColor);
+  box-shadow: inset 5px 0 0 var(--line-highlight-color);
+  z-index: 0;
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+  transition: all 0.2s linear;
+}

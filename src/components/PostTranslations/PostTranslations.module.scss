@@ -1,0 +1,20 @@
+.translatedPosts {
+  background-color: var(--code-inline-bgColor);
+  border: 1px solid var(--code-inline-color);
+  border-radius: 5px;
+  padding: 1em;
+  margin-bottom: 40px;
+  transition: all 0.2s linear;
+}
+
+.translatedPostsText {
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.2s linear;
+}
+
+.translatedPostLink {
+  font-size: 14px;
+  margin-left: 8px;
+  box-shadow: 0 1px 0 0 var(--text-link);
+}

@@ -1,0 +1,15 @@
+.subHeader {
+  width: 100%;
+  max-width: 83.333%;
+  margin: 72px auto 0;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media (min-width: 768px) {
+  .subHeader {
+    max-width: 100%;
+    margin: 72px 0 0;
+    padding-right: 48px;
+  }
+}
